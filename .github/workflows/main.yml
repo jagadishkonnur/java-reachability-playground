@@ -1,7 +1,5 @@
 name: Run SonarQube with Maven
-
 on: push
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +12,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven cloud
-      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=sonardemo-project-reachability_project1 -Dsonar.organization=sonardemo-project-reachability -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
+      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=sonar-demo-githubactions-1_project-sonar-demo -Dsonar.organization=Sonar-demo-githubactions-1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
